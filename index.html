@@ -1,1 +1,58 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/temp_divMensaje.css">    
+</head>
+<body class="darkBg">   
+
+    <div class="test-container">
+        <div class="contenedor">
+            <!--<h1 onclick="openModal('TechF',
+                    'Es un espacio digital donde muestro y comparto mis proyectos, ideas, informacion y desarrollos personales.'
+                    , 'imgs/logo.png')">
+                TechF
+            </h1> -->
+            <!--<h1 onclick="openModal('TechF',
+                    'Es un espacio digital donde muestro y comparto mis proyectos, ideas, informacion y desarrollos personales.'
+                    , 'imgs/logo.png')">
+                TechF
+            </h1> -->
+            <h1 onclick="openModal('Portfolio',
+                    'Un portfolio es una coleccion de trabajos, muestras o proyectos realizados por una persona o empresa para demostrar sus habilidades, experiencia y logros en un campo específico.'
+                    , 'imgs/portfolio_icon.jpg')">Portfolio</h1>
+            <p class="highlight" onclick="openModal('En mantenimiento...',
+            ''
+            , 'imgs/logo.png')">Facundo Amelotti</p>
+        </div>
+    </div>
+
+    <script src='js/snowfall.min.js'></script>
+
+    <script type='text/javascript'>
+        var testContainer = document.querySelector('.test-container'),
+            testContainerIsSnowing = true;
+
+        snowFall.snow(testContainer);
+        if (!testContainerIsSnowing) {
+            snowFall.snow(testContainer, "clear");
+        } else {
+            snowFall.snow(testContainer);
+        }
+    </script>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <h1 id="modalTitle"></h1>
+            <p id="modalContent"></p>
+        </div>
+    </div>
+
+    <script src="js/divCentrado.js"></script>
+
+</body>
+</html>
+
