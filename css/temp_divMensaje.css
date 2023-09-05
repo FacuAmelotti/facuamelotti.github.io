@@ -1,0 +1,54 @@
+﻿.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(1, 1, 1, 0.96); /* Negro medio transparente */
+}
+
+
+.modal-content {
+    background-color: #101010;
+    color:azure;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #FF0010;
+    float: right;
+    font-size: 5em;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #1B0507;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+#modalImage {
+    width: 76px;
+    height: auto;
+    align-content: center;
+    display: inline-flex;
+    border-style: solid;
+    border-color:black;
+}
+
+h1{
+    display:inline-flex;
+    padding: 12px;
+}
+
+p {
+    padding: 16px;
+}

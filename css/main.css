@@ -1,0 +1,55 @@
+﻿/* Establece un tamaño de fuente base para que sea más fácil escalar */
+html {
+    font-size: 16px;
+}
+
+/* Utiliza unidades relativas para tamaños de fuente y dimensiones */
+body {
+    font-size: 1rem;
+    background-color: #191221;
+    text-align: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana gráfica */
+    margin: 0;
+    padding: 0;
+    animation: fade-in 0.5s ease-in-out forwards;
+}
+
+/* Estilos para el contenedor principal */
+.test-container {
+    position: relative;
+    background-color: transparent;
+    height: 100%; /* Ocupa toda la altura de la ventana gráfica */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor {
+    padding: 2rem; /* Ajusta el espaciado según sea necesario */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilos para el título */
+h1 {
+    font-size: 2rem;
+    color: #563D6D;
+    margin-bottom: 1rem; /* Ajusta el margen según sea necesario */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para el párrafo */
+p {
+    font-size: 1rem;
+    color: #666;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.highlight {
+    color: #3D2B57;
+}
+
+/* Resto de los estilos... */
