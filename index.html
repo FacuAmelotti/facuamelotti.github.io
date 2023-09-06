@@ -1,58 +1,272 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Inicio</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/temp_divMensaje.css">    
-</head>
-<body class="darkBg">   
+<html> <!--Hola-->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Facundo Amelotti - Portfolio</title>
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/temp_divMensaje.css">        
+    </head>
 
-    <div class="test-container">
-        <div class="contenedor">
-            <!--<h1 onclick="openModal('TechF',
-                    'Es un espacio digital donde muestro y comparto mis proyectos, ideas, informacion y desarrollos personales.'
-                    , 'imgs/logo.png')">
-                TechF
-            </h1> -->
-            <!--<h1 onclick="openModal('TechF',
-                    'Es un espacio digital donde muestro y comparto mis proyectos, ideas, informacion y desarrollos personales.'
-                    , 'imgs/logo.png')">
-                TechF
-            </h1> -->
-            <h1 onclick="openModal('Portfolio',
-                    'Un portfolio es una coleccion de trabajos, muestras o proyectos realizados por una persona o empresa para demostrar sus habilidades, experiencia y logros en un campo específico.'
-                    , 'imgs/portfolio_icon.jpg')">Portfolio</h1>
-            <p class="highlight" onclick="openModal('En mantenimiento...',
-            ''
-            , 'imgs/logo.png')">Facundo Amelotti</p>
+    <body> 
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img id="modalImage" src="" alt="">
+                <h1 id="modalTitle"></h1>
+                <p id="modalContent"></p>
+            </div>
+        </div>  
+
+        <div id="inicio">
+
+                <div class="navbar">
+                    <a class="smooth-scroll" href="#inicio">Inicio</a>
+                    <a class="smooth-scroll" href="#info-title">Información</a>
+                    <a class="smooth-scroll" href="#project-title">Proyectos</a>
+                    <a class="smooth-scroll" href="#contact">Contacto</a>
+                </div>        
+
+
+                <div class="test-container">
+                    <div class="contenedor" id="message-container">
+                        <h1 onclick="openModal('Portfolio',
+                            'Un portfolio es una colección de trabajos, muestras o proyectos realizados por una persona o empresa para demostrar sus habilidades, experiencia y logros en un campo específico.'
+                            , 'imgs/portfolio_icon.jpg')">Portfolio</h1>
+
+                        <p class="highlight" onclick="openModal('Facundo Amelotti',
+                            ''
+                            , 'imgs/image.png')">Facundo Amelotti</p>
+
+                        <p class="highlight_2">Software Developer</p>
+                    </div>
+                </div>
+                
+
+                <div id="info-title" class="Informacion">
+                    <div class="test-container">
+                        <h3>Informacion</h3> 
+
+                        <div class="container">
+                            <div class="row">
+                            <div class="col-lg-3">
+                                <p>Tengo 25 años, soy un apasionado de la <b>tecnología</b>, la <b>informatica</b> y la <b>ciencia</b>.</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p>Estudiante avanzado de la carrera <b>Licenciatura en Sistemas</b> en Universidad Católica de La Plata.</p>
+                            </div>
+                            <div class="col-lg-3">
+                                <p>Soy <b>proactivo</b>, con <b>mentalidad analítica</b> y con habilidades de comunicación e interacción con los demás.</p>
+                                <p>Entusiasta por seguir creciendo, evolucionando y desarrollando constantemente nuevas habilidades.</p>
+                            </div>
+                            <div class="col-lg-3">
+                                <p>En mi tiempo libre me gusta programar, hacer música, estudiar y aprender cosas nuevas, salir con amigos y hacer deporte.</p>
+                            </div>
+                            </div>
+                        </div> 
+    
+                        <div class="habilidadesDiv">
+                            <h2>Lenguajes</h2>
+                            <div class="row" style="align-content: center; padding-left: 36px;">
+                                <div class="col-lg-1" style="display: inline-flex;">
+                                    <img onclick="openModal('C#',
+                                        'Tengo un amplio conocimiento en el lenguaje de programacion C#, al menos 5 años de practica y desarrollo de diferentes tipos de programas. En su mayoria juegos, aunque tambien he desarrollado sistemas de gestion de datos con conexiones a base de datos, estructuras cliente-servidor, y varios sistemas mas simples para realizar diferentes tareas en el ordenador y en la web.'
+                                        , 'imgs/prog_leng_1.jpg')" src="imgs/prog_leng_1.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                                </div>
+
+                                <div class="col-lg-1" style="display: inline-flex;">
+                                    <img onclick="openModal('.NET',
+                                        'Tengo conocimiento del Framework .NET, Visual Studio (IDE) y sus herramientas, he desarrollado diferentes tipos de simples proyectos con diferentes lenguajes (C++, C#, Visual Basic).'
+                                        , 'imgs/prog_leng_2.jpg')" src="imgs/prog_leng_2.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                                </div>
+
+                                <div class="col-lg-1" style="display: inline-flex;">
+                                    <img onclick="openModal('Visual Basic',
+                                        '...'
+                                        , 'imgs/prog_leng_3.jpg')" src="imgs/prog_leng_3.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                                </div>
+
+
+                                <div class="col-lg-1" style="display: inline-flex;">
+                                    <img onclick="openModal('Python',
+                                        '...'
+                                        , 'imgs/prog_leng_4.jpg')" src="imgs/prog_leng_4.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                                </div>
+
+                                <div class="col-lg-1" style="display: inline-flex;">
+                                    <img onclick="openModal('Java',
+                                        '...'
+                                        , 'imgs/prog_leng_5.jpg')" src="imgs/prog_leng_5.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                                </div>
+
+                                <div class="col-lg-1" style="display: inline-flex;">
+                                    <img onclick="openModal('HTML',
+                                        '..'
+                                        , 'imgs/prog_leng_6.jpg')" src="imgs/prog_leng_6.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                                </div>
+
+                                <div class="col-lg-1" style="display: inline-flex;">
+                                    <img onclick="openModal('CSS',
+                                        '...'
+                                        , 'imgs/prog_leng_7.jpg')" src="imgs/prog_leng_7.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                                </div>
+
+                                <div class="col-lg-1" style="display: inline-flex;">
+                                    <img onclick="openModal('JavaScript',
+                                        '..'
+                                        , 'imgs/prog_leng_8.jpg')" src="imgs/prog_leng_8.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                                </div>
+
+                                <div class="col-lg-1" style="display: inline-flex;">
+                                    <img onclick="openModal('SQL',
+                                        '...'
+                                        , 'imgs/prog_leng_9.jpg')" src="imgs/prog_leng_9.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                                </div>
+                            </div>
+                        </div>              
+
+                    </div>                  
+                </div>
+
+                <div id="project-title" class="Proyectos">
+                    <h3>Proyectos</h3>
+
+                    <div class="test-container">
+                        <div class="row">
+
+                            <div>
+                                <img src="imgs/SpaceSurv_icon.jpg" alt="Imagen Central" style="width: 158px; height: auto; border: solid 2px black">
+                                <h2>Space Survival</h2>
+                                <p>
+                                    Juego 2D para dispositivos móviles ambientado en el espacio. Ofrece distintos modos de juego, pero en todos el objetivo es sobrevivir.
+                                </p>                
+                                <a href="https://techf-studios.itch.io/space-survival">Probar</a>
+                            </div>
+
+                            <div>
+                                <img src="imgs/NoEscape.jpg" alt="Imagen Central" style="width: 158px; height: auto; border: solid 2px black">
+                                <h2>No Escape</h2>
+                                <p>
+                                    Minijuego 3D para ordenadores. Basicamente, el objetivo es sobrevivir...
+                                </p>                
+                                <a href="https://techf-studios.itch.io/no-escape">Probar</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            
+                <div class="image-container">  
+                    <div id="contact" class="background-image"></div>                
+                        <div class="Contacto">
+                            <h3 id="contact-title">¿Tenes ganas de ponerte en contacto conmigo?</h3>
+
+                            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+                            <script type="text/javascript">
+                                (function () {
+                                    emailjs.init('80wJhY0iO-uHjvl3Z'); // Reemplaza con tu User ID de EmailJS
+                                })();
+                            </script>
+
+                            <div class="div_form">
+                                <form id="formulario_contacto" method="post">
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" id="nombre" name="nombre" required class="text-capitalize" placeholder="Nombre de usuario">
+                                    
+                                    <br><br>
+                                
+                                    <label for="email">Mail:</label>
+                                    <input type="text" id="email" name="email" required class="text-capitalize" placeholder="Correo electrónico" autocomplete="email">
+
+                                    <br><br>
+                                
+                                    <label for="asunto">Asunto:</label>
+                                    <input type="text" id="asunto" name="asunto" required class="text-capitalize" placeholder="Asunto del mensaje">
+                                    
+                                    <br><br>
+                                
+                                    <label for="mensaje">Texto:</label>
+                                    <textarea id="mensaje" name="mensaje" required placeholder="Texto/Mensaje"></textarea>
+                                    
+                                    <br>
+                                
+                                    <input type="submit" value="Enviar" id="div_formContacto_btn" >
+                                </form>                                
+                            </div>                           
+                        </div>  
+                   
+                </div>
         </div>
-    </div>
+        
+        <script src="js/emailSender.js"></script>
+        <script src="js/divCentrado.js"></script>
+        <script src="js/smooth-scroll.js"></script>
+        <script src="js/snowfall.min.js"></script>
+        <script type="text/javascript">
+            var testContainer = document.querySelector('.test-container'),
+                testContainerIsSnowing = true;
 
-    <script src='js/snowfall.min.js'></script>
-
-    <script type='text/javascript'>
-        var testContainer = document.querySelector('.test-container'),
-            testContainerIsSnowing = true;
-
-        snowFall.snow(testContainer);
-        if (!testContainerIsSnowing) {
-            snowFall.snow(testContainer, "clear");
-        } else {
             snowFall.snow(testContainer);
-        }
-    </script>
+            if (!testContainerIsSnowing) {
+                snowFall.snow(testContainer, "clear");
+            } else {
+                snowFall.snow(testContainer);
+            }
+        </script>
 
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="">
-            <h1 id="modalTitle"></h1>
-            <p id="modalContent"></p>
-        </div>
-    </div>
+   
 
-    <script src="js/divCentrado.js"></script>
+        <footer>
+            <p>Dev by Facu</p>
+            <div class="habilidadesDiv">
+                <div class="row" style="align-content: center; padding-left: 36px;">
+                    <div class="col-lg-1" style="display: inline-flex;">
+                        <a href="https://www.linkedin.com/in/facundoamelotti/" target="_blank">
+                            <img src="imgs/redes_1.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                        </a>
+                    </div>
+    
+                    <div class="col-lg-1" style="display: inline-flex;">
+                        <a href="https://twitter.com/memetolotti" target="_blank">
+                            <img src="imgs/redes_2.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                        </a>
+                    </div>
+                
+                    <!--
+                    <div class="col-lg-1" style="display: inline-flex;">
+                        <a href="https://www.instagram.com/facuamelotti/" target="_blank">
+                            <img src="imgs/redes_3.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                        </a>
+                    </div>
+    
+                    <div class="col-lg-1" style="display: inline-flex;">
+                        <a href="https://www.facebook.com/facuuamelotti/" target="_blank">
+                            <img src="imgs/redes_4.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                        </a>
+                    </div> 
+                    -->
+    
+                    <div class="col-lg-1" style="display: inline-flex;">
+                        <a>
+                            <img onclick="openModal('GMAIL',
+                            'FACUEZEQUIELAMELOTTI@GMAIL.COM'
+                            , 'imgs/redes_5.jpg')" src="imgs/redes_5.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                        </a>
+                    </div>
+    
+    
+                    <div class="col-lg-1" style="display: inline-flex;">
+                        <a href="https://soundcloud.com/sonus-divinus/" target="_blank">
+                            <img src="imgs/redes_6.jpg" alt="Imagen Center" style="width: 76px; height: auto; align-content:center;">
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+    </body>
 
-</body>
+
 </html>
-
