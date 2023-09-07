@@ -1,205 +1,350 @@
-﻿@font-face {
-    font-family: f;
-    src: url('/fonts/big_noodle_titling.ttf');
-}
-
+﻿/* Estilos globales */
 body {
     font-family: Arial, sans-serif;
     background-color: #191221;
     text-align: center;
-    height: 100%;
+    /*height: 100%;*/
     margin: 0;
     padding: 0;
     animation: fade-in 0.5s ease-in-out forwards;
 }
 
+#myModal {
+    z-index: 999; /* Establece un valor alto para el modal */
+    position: absolute;
+    top: 0;
+}
+
+#modalTitle {
+    margin-top: 50px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    bottom: 0;
+}
+
+.modal-img {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content-img {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close-img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilos globales para todos los elementos secundarios directos de body */
+body > * {
+    color: aliceblue;
+    /* Box-sizing para evitar problemas de diseño */
+    box-sizing: border-box;
+}
+
+/* NAV BAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-image: linear-gradient(to left, #272440, #171430);
+    padding: 5px 0;
+    z-index: 1000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los enlaces del menú */
+.navbar a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 5px;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Cambiar color de fondo y escala al pasar el mouse por encima */
+.navbar a:hover {
+    background-color: #4f4158;
+    transform: scale(1.05);
+}
+
+/* Estilos para el contenedor */
 .contenedor {
     padding: 50px;
     padding-top: 70px;
 }
 
-h1 {
-    font-family: f, Comic Sans MS, sans-serif;
-    font-size: 7em;
+/* Flexibilizar los contenedores principales */
+#message-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Establece la altura mínima al 100% de la altura de la ventana gráfica */ 
+    overflow-x: hidden;   
+}
+
+.Proyectos,
+.Informacion,
+.Contacto {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Establece la altura mínima al 100% de la altura de la ventana gráfica */
+}
+
+/*INICIO-PRESENTACION*/
+
+#message-container h1 {
+    font-family: f, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Calibri, 'Trebuchet MS', sans-serif, 'Arial Narrow', Arial, sans-serif, Times, serif, sans-serif;
+    font-size: 50px;
     color: #563D6D;
-    margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Centrar horizontalmente el texto */
+    align-self: center; /* Centrar verticalmente el texto */
+    margin: 0; /* Restablecer todos los márgenes */
+    padding: 0; /* Restablecer todo el relleno */  
 }
-
-
-p {
-    font-size: 4px;
-    color: #666;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
 
 .highlight {
     color: #7f7a86;
-    font-size: 1.62em;
-    margin-bottom: 0; /* Elimina el espacio entre estos elementos */
-    padding-bottom: 0;
+    margin: 0; /* Elimina el espacio entre estos elementos */
+    padding: 0;
+    margin-left: 26%;
+    margin-right: 26%;
 }
 
 .highlight_2 {
     color: #3b2f4b;
-    font-size: 1.2em;
-    margin-top: 0; /* Elimina el espacio entre estos elementos */
-    padding-top: 0;
-}
-
-/* Resto de los estilos... */
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Estilos para el h2 */
-h2 {
-    color: snow;
-    padding: 5px 10px; /* Ajusta el padding según sea necesario */
-}
-
-/* Estilos para los div de los diferentes desarrollos */
-.row > div {
-    background-color: #1C1223; /* Violeta oscuro */
-    padding: 10px;
-    transition: transform 0.3s;
-    margin: 12px;
-}
-
-    .row > div h2 {
-        left: 0;
-        color: snow;
-        transition: transform 0.3s;
-    }
-
-    /* Cambiar tamaño al pasar el mouse por encima */
-    .row > div:hover {
-        transform: scale(1.1);
-    }
-
-    /* Volver al tamaño original al quitar el mouse */
-    .row > div:not(:hover) {
-        transform: scale(1);
-    }
-
-    /* Estilos para los enlaces "Ver más" dentro de los div */
-    .row > div a.btn {
-        color: #fff; /* Texto en color blanco */
-        background-color: #1E1326; /* Violeta más claro para el botón */
-        padding: 5px 10px; /* Ajusta el padding según sea necesario */
-        text-decoration: none;
-    }
-
-        /* Cambiar color de fondo del enlace al pasar el mouse por encima */
-        .row > div a.btn:hover {
-            background-color: #271A31; /* Violeta oscuro */
-        }
-
-hr {
-    display: none; /* Oculta el <hr> en esta página */
-}
-
-.lightBg {
-    background: url(images/snow.jpg) #b1dde0 top center no-repeat;
-}
-
-html, body {
+    margin: 0; /* Elimina el espacio entre estos elementos */
     padding: 0;
-    margin: 0;
-    min-height: 100%;
-    height: 100%;
-
+    margin-left: 26%;
+    margin-right: 26%;
 }
 
-.darkBg {
-    background: #191221 url(images/smashing.jpg) top center;
-    background-repeat: no-repeat;
-    position:relative;
+
+#message-container h1:hover,
+.highlight:hover,
+.highlight_2:hover {
+    transform: scale(1.1);
+    cursor: default;
 }
 
-.lightBg {
-    background: url(images/snow.jpg) #b1dde0 top center no-repeat;
-    opacity:45%;
-    z-index:-1;
+/* Volver al tamaño original al quitar el mouse */
+#message-container h1:not(:hover),
+.highlight:not(:hover),
+.highlight_2:not(:hover) {
+    transform: scale(1);
+    cursor: default;
 }
 
-.test-container {
-    position: relative;
-    background-color: transparent;
-    height: 92vh; /* Cambiado a 100% de la altura del viewport */
-}
-.test-container > * {
-    position:relative;
+@media screen and (min-width: 500px) {
+    #message-container h1 {
+        font-size: 82px;
+      }
+      
+      .highlight {
+          font-size: 32px;
+      }
+      
+      .highlight_2 {
+          font-size: 22px;
+      }
 }
 
-.test-container h1,p {
-   padding:0px;
-   margin:0px;
-   top:0px;
+/*INFORMACION*/
+.Informacion{
+    background-color: #0c0c11;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.contenedor {
-    height: 100%;
+.infoPersonal{
+    background-color: #0d062b;
+    padding: 5px 0px 5px 0px;
+    margin: 20px 50px 20px 50px;    
+    border-radius: 30px; /* Bordado redondeado de 10px */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border: 1px solid #1d1a36;; /* Borde negro de 2px */
+    border-radius: 20px;
+}
+
+#dato {
+    background-color: #1d1a36;
+    margin: 20px;
+    border: 1px solid rgb(9, 1, 14); /* Borde negro de 2px */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+    padding: 0px;
+}
+
+#dato > * {
+    margin: 20px;
+    padding: 0px;
+}
+
+#dato p {
+    color: #aaaaaa;
+}
+
+#dato p b {
+    color: #ffffff;
+}
+
+.habilidadesDiv {
+    background-color: #0d062b;
+    padding: 15px 0;
+    margin: 20px 50px;
+    border: 2px solid black; /* Borde negro de 2px */
+    border-radius: 30px;
+}
+
+.ImgLenguaje {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ImgLenguaje img {
+    width: 98%;
+    height: auto;
+    cursor: pointer;
+    margin: 6px;
+    border: 6px solid rgb(15, 10, 19); /* Borde negro de 2px */
+    border-radius: 20px;
+}
+
+.ImgLenguaje img:hover,
+#dato:hover {
+    transform: scale(1.072);
+}
+
+.ImgLenguaje img:not(:hover),
+#dato:not(:hover) {
+    transition: transform 0.3s;
+    transform: scale(1);
+}
+
+/* PROYECTOS */
+.Proyectos {
+    border: solid 2px;
+    border-color: #0b080e;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.proyect_panel {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding-top: 0px; /* Añade espacio en la parte superior */
+    justify-content: space-between; /* Coloca los elementos en ambos extremos de la línea */
+    padding: 16px;
+    margin: 32px;
+    background-color: #1f1c38;
+    margin-bottom: 28px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a una nueva línea en pantallas más pequeñas */
+    border: solid 5px;
+    border-color: rgba(15, 10, 19, 0.72);
 }
 
-.contenedor *:hover {
-    transform: scale(1.12);
-    cursor:default;
+.proyect_panel:hover {
+   scale:1.018;
 }
 
-    .contenedor *:not(:hover) {
-        transition: transform 0.3s;
-        transform: scale(1);
-    }
+.proyect_panel :not(:hover) {
+    scale:1;
+ }
 
-#navMain.navbar-fixed-top {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+.proyect_image {
+    flex: 1 0 10%; /* Ocupa el 30% del ancho */
+    text-align: center; /* Alinea la imagen a la izquierda */
+    margin-right: 10px; /* Espacio entre la imagen y el contenido */
 }
 
-#modalTitle {
-    font-size:3.2em;
+.proyect_image img {
+    max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
-.row p {
-font-size: 1.2em;
-}
-/* Estilos para el contenedor de la imagen de fondo */
-/* Estilos para el contenedor de la imagen de fondo */
-.image-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    border: 2px solid #000;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+.proyect_content {
+    flex: 1 1 80%; /* Ocupa el 65% del ancho */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 10px;
+    background: #0b080e;
 }
 
-/* Nuevo estilo para el div que cubre la imagen de fondo */
-/* Estilo para el contenedor de la imagen de fondo */
-.image-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    border: 2px solid #000;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+.proyect_content > * {
+    margin: 0;
 }
 
-/* Estilo para el div de la imagen de fondo */
-.background-image {
+.proyect_content h2 {
+    color: #8576aa;    
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 0; /* Elimina el margen superior del título */
+    margin-left: 12px;
+}
+
+.proyect_content h2 i {
+    color: #564f69;    
+    font-size: 16px;
+}
+
+.proyect_text {
+    margin-top: 10px; /* Espacio entre el título y el texto */
+    margin-bottom: 10px; /* Espacio entre el texto y el botón */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.proyect_content_button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #41218a; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+/* Estilo del botón al pasar el cursor por encima */
+.proyect_content_button:hover {
+    background-color: #38005e; /* Color de fondo cambiado al pasar el cursor */
+}
+
+
+
+
+
+
+
+/* CONTACTO */
+.Contacto {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    bottom: 0;
+    margin-bottom: -10px; /* Ajusta el margen inferior para eliminar el espacio */
+    position: relative; /* Establecer posición relativa para elementos secundarios */
+}
+
+.Contacto::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -209,94 +354,16 @@ font-size: 1.2em;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.012; /* Ajusta la opacidad según tus preferencias */
+    opacity: 0.036; /* Ajusta la opacidad según tus preferencias */
+    z-index: -1; /* Asegúrate de que el pseudo-elemento esté detrás del contenido */
 }
 
-.Proyectos,
-.Informacion {
-    position: relative;
-    width: 100%;
-    height: 150vh;
-    border: 2px solid #000;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+.Contacto > * {
+    position: relative; /* Asegura que los elementos secundarios estén por encima del pseudo-elemento */
+    z-index: 1; /* Asegúrate de que los elementos secundarios estén por encima del pseudo-elemento */
 }
 
-.Proyectos .background-image,
-.Informacion .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../ruta-de-tu-imagen.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.012; /* Ajusta la opacidad según tus preferencias */
-}
 
-.Proyectos .Contacto,
-.Informacion .Contacto {
-    position: absolute; /* Cambiar a posición estática */
-    width: 100%;
-    height: 120vh;
-}
-
-#contact.background-image {
-    /* Your existing styles here */
-    /* For example, you can add a lower z-index */
-    z-index: -1; /* This will place it below other elements */
-}
-
-/* Estilos para el título */
-.Proyectos #contact-title,
-.Informacion #contact-title {
-    font-size: 2.32em;
-    color: white; /* Cambia el color del texto del título según tus preferencias */
-    /* Agrega otros estilos para el título según sea necesario */
-}
-
-.Proyectos {
-    background-color: #171229;
-    width: 100%; /* Ajusta el ancho según tus necesidades */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra el contenido horizontalmente */
-    text-align: center; /* Centra el texto */
-    height: 150vh;
-}
-
-/* Estilos para la imagen */
-.Proyectos img {
-    width: 158px;
-    height: auto;
-    border: solid 2px black;
-    margin-right: 20px; /* Espacio a la derecha de la imagen */
-}
-
-/* Estilos para el título */
-.Proyectos h2 {
-    font-size: 24px; /* Ajusta el tamaño de fuente según tus necesidades */
-}
-
-/* Estilos para el enlace "Probar" */
-.Proyectos a {
-    background-color: #0074D9; /* Cambia el color de fondo según tus preferencias */
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px; /* Ajusta el relleno según tus necesidades */
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px; /* Espacio superior entre el texto y el enlace */
-}
-
-.Informacion {
-    background-color: #14121b;
-}
-
-.Informacion, p, b {
-    color: #8477bb;
-}
 
 form {
     margin: 0 auto;
@@ -365,211 +432,48 @@ br {
     padding-top: 20px; /* Espaciado entre elementos BR */
 }
 
-.smooth-scroll {
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+
+.Proyectos h3,
+.Informacion h3,
+.Contacto h3 {    
+    padding-top: 20px;
+    font-size: 32px;
 }
 
-.smooth-scroll:hover {
-    background-color: #555; /* Cambia el color de fondo en hover */
-}
-
-/* Estilos para el menú de navegación */
-.navbar {
-    position: sticky; /* Utilizar position: sticky */
-    top: 0;
-    background-image: linear-gradient(to left, #272440, #171430);
-    padding: 10px 0;
-    z-index: 1000; /* Establecer un valor alto para el z-index */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilos para los enlaces del menú */
-.navbar a {
-    display: inline-block;
-    color: white; /* Color de texto */
-    text-decoration: none; /* Quita la decoración de subrayado en los enlaces */
-    padding: 10px 20px; /* Espaciado interno de los enlaces */
-    border-radius: 20px; /* Bordes redondeados */
-    transition: background-color 0.3s, transform 0.3s; /* Efectos de transición suaves */
-}
-
-/* Cambiar color de fondo y escala al pasar el mouse por encima */
-.navbar a:hover {
-    background-color: #4f4158; /* Cambia el color de fondo en hover */
-    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
-}
-
+/* FOOTER */
 footer {
-    background-color: #09010f;
+    background-color: #0b080e;
+    padding-top: 0;
+    margin-top: -10px; /* Ajusta el margen superior para eliminar el espacio */
 }
+
 footer p {
-    font-size: 1.26em;
+    font-size: 12px;
 }
 
+/* Estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
+@media screen and (max-width: 470px) {
+    .navbar a {
+        font-size: 0.62em; /* Tamaño de fuente más pequeño */
+    }
 
-/* */
-/* Estilos para los div de los diferentes desarrollos */
-.row > div {
-    padding: 10px;
-    transition: transform 0.3s;
-    margin: 12px;
+    .highlight,    
+    .highlight_2  {
+        font-size: 18px;
+        margin-left: 12%;
+        margin-right: 12%;
+    }
+    
+    body{
+        margin-left: 7px;
+    }
 }
 
-.row div {
-    top:0;
-    background-color: rgba(8, 8, 14,1);
-    border-radius: 14px;
-}
-
-
-    .row > div h2 {
-        left: 0;
-        color: snow;
-        transition: transform 0.3s;
+/* Otra media query para un tamaño de pantalla diferente */
+@media screen and (min-width: 471px) 
+{
+    .navbar a {
+        padding: 10px 25px;
     }
 
-    .row > div p {
-        color: #7A7A7A;
-        transition: transform 0.3s;
-        padding: 0;
-        padding-left:12px;
-    }
-
-    .row > div h5 {
-        color: darkslateblue;
-        transition: transform 0.3s;
-        font-size: 1.24em;
-    }
-
-    /* Cambiar tamaño al pasar el mouse por encima */
-    .row > div:hover {
-        transform: scale(1.1);
-    }
-
-    /* Volver al tamaño original al quitar el mouse */
-    .row > div:not(:hover) {
-        transform: scale(1);
-    }
-
-    /* Estilos para los enlaces "Ver más" dentro de los div */
-    .row > div a.btn {
-        color: #fff; /* Texto en color blanco */
-        background-color: #1E1326; /* Violeta más claro para el botón */
-        padding: 5px 10px; /* Ajusta el padding según sea necesario */
-        text-decoration: none;
-    }
-
-        /* Cambiar color de fondo del enlace al pasar el mouse por encima */
-        .row > div a.btn:hover {
-            background-color: #271A31; /* Violeta oscuro */
-        }
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-
-}
-
-    .image-grid img {
-        width: 98%;
-        height: auto;
-        cursor: pointer;
-        margin: 6px;
-    }
-
-    .image-grid img:hover,
-    textarea:hover {
-        transform: scale(1.072);
-    }
-
-    .image-grid img:not(:hover) {
-        transition: transform 0.3s;
-        transform: scale(1);
-    }
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-    .overlay img {
-        max-width: 80%;
-        max-height: 80%;
-    }
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-#div_main {
-    background-color: transparent;
-    padding: 12px;
-    margin: 12px;
-    border-radius: 3px;
-    border: 2px solid #050505;
-    transition: transform 0.3s;
-}
-
-    #div_main h4 {
-        color: darkslateblue;
-        padding-left: 16px;
-        padding-top: 10px
-    }
-
-    #div_main h5 {
-        color: darkslateblue;
-        padding-left: 12px;
-        padding-top: 10px
-    }
-
-    #div_main li p {
-        color: darkslateblue;
-        padding-left: 12px;
-        font-size: 0.92em;
-        padding-top: 10px;
-    }
-
-    #div_main li h6 {
-        color: #28222E;
-        padding-left: 12px;
-        padding-top: 10px;
-        font-size: 1.12em;
-        
-    }
-
-#div_main p {
-    color: #808080;
-    padding-left: 20px;
-}
-
-#div_element_1 p {
-    color: #808080;
-    padding-left: 16px;
-}
-
-#div_element_1 p b {
-    color: #B3B3B3;
-}
-
-.profile-info {
-    margin: 0;
-    padding: 0;
-}
-
-.profile-info, h5 {
-    color: #4a3568;
 }
